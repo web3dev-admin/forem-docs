@@ -60,6 +60,26 @@ notified.
 
 ## Deploying to Heroku
 
+### Buildpacks
+
+You need to setup the following buildpacks on your app:
+
+  1. heroku/nodejs
+  2. heroku/ruby
+  3. heroku/pgbouncer
+
+To do that run the following commands:
+
+```
+  $ heroku buildpacks:add heroku/nodejs
+  $ heroku buildpacks:add heroku/ruby
+  $ heroku buildpacks:add heroku/pgbouncer
+```
+
+They should be in this specific order.
+
+### Release Phase
+
 We use Heroku's
 [Release Phase](https://devcenter.heroku.com/articles/release-phase) feature.
 Upon deploy, the app installs dependencies, bundles assets, and gets the app
